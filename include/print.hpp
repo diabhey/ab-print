@@ -9,7 +9,6 @@
  *
  */
 
-// #include <experimental/source_location>
 #include <ostream>
 #include <utility>
 
@@ -134,8 +133,6 @@ void printArgs(Function f, FirstArg first, Rest... rest) {
  */
 template <class... Args>
 void print(std::ostream &stream, Args... args) {
-  // stream << location.file_name() << "::" << location.function_name() << "("
-  //  << location.line() << ") - ";
   printArgs([&](auto arg) { print(stream, arg); }, args...);
   stream << '\n';
 }
