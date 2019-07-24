@@ -22,11 +22,12 @@ To get started, see [Requirements](#requirements) and [Installation](#installati
 See [Usage](#usage) for a full example.
 
 ## Requirements
-The library requires C++1z to build, including compiler and standard library support.
+The library requires C++14 to build, including compiler and standard library support.
 The following minimum versions are required to build the library:
 
-* GCC 7
-* Clang 6.0
+* GCC 5
+* Clang 3.8
+* clang-tidy (not mandatory)
 
 ## Installation
 
@@ -45,7 +46,7 @@ This builds the `abprint` library and `example`.
 
 ## Usage
 ### Example
-The ab-print library has a simple straight forward API. `ab::print(std::cout, data types...)`.
+The ab-print library has a simple straight forward API. `ab::print(std::ostream, data types...)`.
 Find below a full example that demonstrates the usage for different data types.
 
 ```c++
@@ -86,4 +87,5 @@ cd build/example
 
 ## Author
 bigillu (Abhimanyu Selvan) is the primary author and maintainer of this library.
-Twitter @a_bigillu
+
+Follow me on [Twitter.](http://www.twitter.com/a_bigillu)
