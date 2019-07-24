@@ -1,6 +1,20 @@
-cmake_minimum_required (VERSION 3.11.0 FATAL_ERROR)
+cmake_minimum_required (VERSION 3.10.0 FATAL_ERROR)
 
 project (ab-print VERSION 1.0.0 LANGUAGES CXX)
+
+# clang-tidy settings
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+find_program(
+  CLANG_TIDY_EXE
+  NAMES "clang-tidy"
+  DOC "Path to clang-tidy executable"
+  )
+if(NOT CLANG_TIDY_EXE)
+  message(STATUS "clang-tidy not found.")
+else()
+  message(STATUS "clang-tidy found: ${CLANG_TIDY_EXE}")
+  set(DO_CLANG_TIDY "${CLANG_TIDY_EXE}" "-checks=*,-clang-analyzer-alpha.*")
+endif()
 
 # installation directories
 set (AB_PRINT_INSTALL_INCLUDE_DIR "include" CACHE STRING "The installation include directory")
