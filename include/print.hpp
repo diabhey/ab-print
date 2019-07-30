@@ -16,13 +16,9 @@ namespace ab {
 
 namespace typetraits {
 // Trait to determine if it is a STL container
-template <typename T, typename = void>
-struct is_container : std::false_type {};
+template <typename T, typename = void> struct is_container : std::false_type {};
 
-template <typename... Ts>
-struct is_container_helper {
-  typedef void type;
-};
+template <typename... Ts> struct is_container_helper { typedef void type; };
 
 /**
  * @brief is_container template specialization
@@ -58,7 +54,7 @@ using if_non_integral = std::enable_if<not(std::is_integral<T>::value ||
                                            std::is_floating_point<T>::value ||
                                            is_container<T>::value),
                                        T>;
-}  // namespace typetraits
+} // namespace typetraits
 
 // Overloaded << operator to print std::pair. It will
 // also be triggered while using std::map
@@ -106,8 +102,7 @@ auto print(std::ostream &stream, const T &value) ->
  *
  * @tparam Function function object to be called.
  */
-template <typename Function>
-void printArgs(Function f) {
+template <typename Function> void printArgs(Function f) {
   // Parameter pack is empty.
 }
 
@@ -131,9 +126,8 @@ void printArgs(Function f, FirstArg first, Rest... rest) {
  * @param stream Ostream object reference
  * @param args list of args of different types
  */
-template <class... Args>
-void print(std::ostream &stream, Args... args) {
+template <class... Args> void print(std::ostream &stream, Args... args) {
   printArgs([&](auto arg) { print(stream, arg); }, args...);
   stream << '\n';
 }
-}  // namespace ab
+} // namespace ab

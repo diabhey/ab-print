@@ -13,7 +13,7 @@ if(NOT CLANG_TIDY_EXE)
   message(STATUS "clang-tidy not found.")
 else()
   message(STATUS "clang-tidy found: ${CLANG_TIDY_EXE}")
-  set(DO_CLANG_TIDY "${CLANG_TIDY_EXE}" "-checks=*,-clang-analyzer-alpha.*")
+  set(DO_CLANG_TIDY "${CLANG_TIDY_EXE}" "-checks=*,cppcoreguidelines*")
 endif()
 
 # installation directories
@@ -27,8 +27,8 @@ target_include_directories (ab-print INTERFACE
   $<INSTALL_INTERFACE:${AB_PRINT_INSTALL_INCLUDE_DIR}>
 )
 
-# require C++17
-target_compile_features (ab-print INTERFACE cxx_std_17)
+# require C++14
+target_compile_features (ab-print INTERFACE cxx_std_14)
 
 # testing
 enable_testing ()
