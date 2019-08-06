@@ -1,7 +1,7 @@
 /**
- * @file printtest.cpp
+ * @file example.cpp
  * @author Bigillu
- * @brief Test application for the Printer library
+ * @brief Test application for the ab::print library
  * @version 0.1
  * @date 2019-06-08
  *
@@ -19,7 +19,7 @@
 #include <vector>
 
 /**
- * @brief Entry point into the test application
+ * @brief Entry point into the example application
  *
  */
 int main() {
@@ -46,7 +46,7 @@ int main() {
             std::unordered_map<std::string, std::string>{
                 {"RED", "#FF0000"}, {"GREEN", "#00FF00"}, {"BLUE", "#0000FF"}},
             '\n');
-  // Printing Custom data types
+  // Printing custom data types
   {
     class Coord {
     public:

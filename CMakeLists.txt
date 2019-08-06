@@ -13,7 +13,7 @@ if(NOT CLANG_TIDY_EXE)
   message(STATUS "clang-tidy not found.")
 else()
   message(STATUS "clang-tidy found: ${CLANG_TIDY_EXE}")
-  set(DO_CLANG_TIDY "${CLANG_TIDY_EXE}" "-checks=*,cppcoreguidelines*")
+  set(DO_CLANG_TIDY "${CLANG_TIDY_EXE}" "-checks=*")
 endif()
 
 # installation directories
@@ -41,4 +41,10 @@ endif ()
 option (AB_PRINT_BUILD_EXAMPLES "Build example programs" ON)
 if (AB_PRINT_BUILD_EXAMPLES)
   add_subdirectory (example/)
+endif ()
+
+# benchmark
+option (AB_PRINT_BENCHMARK "Build benchmark programs" ON)
+if (AB_PRINT_BENCHMARK)
+  add_subdirectory (benchmark/)
 endif ()

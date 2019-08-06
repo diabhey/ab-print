@@ -94,7 +94,7 @@ auto print(std::ostream &stream, const T &value) ->
   for (typename T::const_iterator it = value.begin(); it != value.end(); ++it) {
     stream << *it << " ";
   }
-  stream << " } ";
+  stream << " } \n";
 }
 
 /**
