@@ -35,6 +35,10 @@ This describes the installation process using cmake. As pre-requisites, you'll n
 ```bash
 # Check out the library.
 $ git clone https://github.com/bigillu/ab-print.git
+
+# Initialise the git modules
+$ git submodule init && git submodule update
+
 # Make a build directory to place the build output.
 $ mkdir build && cd build
 # Generate a Makefile with cmake.
