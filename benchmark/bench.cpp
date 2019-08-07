@@ -16,19 +16,21 @@
 
 using namespace benchmark;
 
-static void BM_Print(benchmark::State &state) {
-  for (auto _ : state)
-    ab::print(std::cout,
-              std::vector<std::string>{"Testing", "ab-print", "now"});
+static void benchmark_abprint(benchmark::State &state) {
+  std::vector<std::string> vecString{"Testing", "ab-print", "now"};
+
+  for (auto _ : state) {
+    ab::print(std::cout, vecString);
+  }
 }
 // Register the function as a benchmark
-BENCHMARK(BM_Print);
+BENCHMARK(benchmark_abprint);
 
 // Define another benchmark
-static void BM_Cout(benchmark::State &state) {
+static void benchmark_cout(benchmark::State &state) {
   std::vector<std::string> vecString{"Testing", "ab-print", "now"};
-  for (auto _ : state) {
 
+  for (auto _ : state) {
     std::cout << "{ ";
     for (auto i : vecString) {
       std::cout << i << " ";
@@ -36,6 +38,6 @@ static void BM_Cout(benchmark::State &state) {
     std::cout << " } " << '\n';
   }
 }
-BENCHMARK(BM_Cout);
+BENCHMARK(benchmark_cout);
 
 BENCHMARK_MAIN();
