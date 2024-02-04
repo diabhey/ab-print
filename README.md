@@ -1,5 +1,5 @@
 # ab-print
-A generic header-only print library for C++. It can be considered as a flexible alternative to iostreams.
+A generic header-only print library for C++. It can be considered a flexible alternative to streams.
 
 ```c++
 #include <array>
@@ -31,7 +31,7 @@ The following minimum versions are required to build the library:
 
 ## Installation
 
-This describes the installation process using cmake. As pre-requisites, you'll need git and cmake installed.
+This describes the installation process using cmake. As prerequisites, you'll need git and cmake installed.
 ```bash
 # Check out the library.
 $ git clone https://github.com/bigillu/ab-print.git
@@ -50,7 +50,7 @@ This builds the `abprint` library and `example`.
 
 ## Usage
 ### Example
-The ab-print library has a simple straight forward API. `ab::print(std::ostream, data types...)`.
+The ab-print library has a simple, straightforward API. `ab::print(std::ostream, data types...)`.
 Find below a full example that demonstrates the usage for different data types.
 
 ```c++
@@ -90,6 +90,4 @@ cd build/example
 ```
 
 ## Author
-bigillu (Abhimanyu Selvan) is the primary author and maintainer of this library.
-
-Follow me on [Twitter.](http://www.twitter.com/a_bigillu)
+[diabhey](http://www.twitter.com/diabhey) 
